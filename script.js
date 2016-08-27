@@ -11,6 +11,8 @@ div.style.backgroundImage='url(' + imgURL + ')';
 document.body.appendChild(div);*/
 
 var imgURL = chrome.extension.getURL('chicken.png'); 
+document.body.style.backgroundImage='url(' + imgURL + ')'; 
+
 //document.body.style.backgroundImage='url(' + imgURL + ')'; 
 
 function replaceImages(domImg, srcImage) {
@@ -31,3 +33,18 @@ for (var i  = 0; i < imgs.length; i++) {
 // FIX ME (AUDIO)
 var audio = new Audio('duffman.mp3'); 
 audio.play();
+
+var divs = document.querySelectorAll('div');
+for (var i = 0; i < divs.length; i++) {
+  divs[i].style.transition='all 0.3s';
+  twitchSometimes(divs[i]);
+}
+
+function twitchSometimes(div) {
+  var randomInterval = Math.random() * 10000;
+  setInterval(function() {changeRotation(div);}, randomInterval);
+}
+
+function changeRotation(div) {
+  div.style.transform='rotate(0.5deg)';
+}
