@@ -7,7 +7,8 @@ function click(e) {
   console.log("We are in popup.js function");
   //document.body.style.backgroundImage = "url('chicken.png')";
   chrome.tabs.executeScript(null,
-      {code:"var imgURL = chrome.extension.getURL('chicken.png'); document.body.style.backgroundImage='url(' + imgURL + ')'"});
+      {code:"var imgURL = chrome.extension.getURL('chicken.png'); document.body.style.backgroundImage='url(' + imgURL + ')'; var audio = new Audio('duffman.mp3'); audio.play()"}
+  );
   window.close();
 }
 
