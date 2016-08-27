@@ -16,6 +16,9 @@ var counts = []
 var intervals = []
 // groups of elements that transform together
 var groups = [[], [], [], [], [], [], []]
+// stuff for the background's interval
+var bgCount = 0;
+// links do shit also.
 
 var imgURL = chrome.extension.getURL('chicken.png'); 
 document.body.style.backgroundImage="url(' + imgURL + ')"; 
@@ -41,6 +44,14 @@ for (var i  = 0; i < imgs.length; i++) {
 var audio = new Audio('duffman.mp3'); 
 audio.play();
 
+// here we make the background cycle through many colours
+document.body.style.transition='all 0.8s';
+document.body.style.backgroundColor='red';
+setInterval(function() {
+    bgColourCycle();
+    bgCount = bgCount + 1
+  }, 1000);
+
 var divs = document.querySelectorAll('div');
 for (var i = 0; i < divs.length; i++) {
   divs[i].style.transition='all 0.3s';
@@ -54,7 +65,7 @@ for (var i = 0; i < groups.length; i++) {
 
 function twitchSometimes(group, i) {
   // takes an array of elements and gives them all transformations
-  var ran = Math.floor(Math.random() * 3000);
+  var ran = Math.floor(Math.random() * 6000);
   intervals[i] = setInterval(function() {changeRotation(group, i);}, ran);
 }
 
@@ -62,12 +73,40 @@ function changeRotation(group, i) {
   counts[i] = counts[i] + 1;
   if(counts[i] % 2 === 0) {
     group.map(function(el) {
-      el.style.transform='rotate(1deg)';
+      el.style.transform='rotate(1.5deg)';
     });
   }
   else {
     group.map(function(el) {
-      el.style.transform='rotate(-1deg)';
+      el.style.transform='rotate(-1.5deg)';
     });
   }
+}
+
+var links = Array.from(document.querySelectorAll('a'));
+for (var i = 0; i < links.length; i++) {
+  links[i].style.transition='all 0.3s';
+  setInterval(function() {
+      for (var j = 0; j < links.length; j++) {
+          links[j].style.transform='rotate(360deg)';
+      }
+      setTimeout(function() {
+          for (var j = 0; j < links.length; j++) {
+              links[j].style.transform='rotate(0deg)';
+          };}, 1000);
+  }, 1000)
+}
+
+
+function bgColourCycle() {
+  if (bgCount % 10 === 0) { document.body.style.backgroundColor='#F08'; }
+  if (bgCount % 10 === 1) { document.body.style.backgroundColor='#8F8'; }
+  if (bgCount % 10 === 2) { document.body.style.backgroundColor='#3AF'; }
+  if (bgCount % 10 === 3) { document.body.style.backgroundColor='#7F0'; }
+  if (bgCount % 10 === 4) { document.body.style.backgroundColor='#C08'; }
+  if (bgCount % 10 === 5) { document.body.style.backgroundColor='#7C8'; }
+  if (bgCount % 10 === 6) { document.body.style.backgroundColor='#F7C'; }
+  if (bgCount % 10 === 7) { document.body.style.backgroundColor='#902'; }
+  if (bgCount % 10 === 8) { document.body.style.backgroundColor='#A5F'; } 
+  if (bgCount % 10 === 9) { document.body.style.backgroundColor='#50D'; }
 }
