@@ -5,11 +5,12 @@
 
 function click(e) {
   chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.body.style.backgroundImage="url('chicken.png')";"}
   window.close();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  console.log('here');
   var divs = document.querySelectorAll('div');
   for (var i = 0; i < divs.length; i++) {
     divs[i].addEventListener('click', click);
