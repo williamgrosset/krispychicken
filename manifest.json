@@ -1,6 +1,6 @@
 {
-  "name": "A browser action with a popup that changes the page color",
-  "description": "Change the current page color",
+  "name": "KrispyChicken",
+  "description": "A browser action with a popup that adds krispy chicken everywhere.",
   "version": "1.0",
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
