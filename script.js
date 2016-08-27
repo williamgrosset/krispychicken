@@ -25,14 +25,11 @@ function replaceImages(domImg, srcImage) {
     img.src = srcImage;
 }
 
+// Fried Chicken EVERYWHERE
 var imgs = document.getElementsByTagName('img');
 for (var i  = 0; i < imgs.length; i++) {
     imgs[i].src = replaceImages(imgs[i], imgURL);
 }
-
-// FIX ME (AUDIO)
-var audio = new Audio('duffman.mp3'); 
-audio.play();
 
 var counts = []
 
@@ -50,7 +47,6 @@ function twitchSometimes(div, i) {
 
 function changeRotation(div, i) {
   counts[i] = counts[i] + 1;
-  console.log(counts[i]);
   if(counts[i] % 2 === 0) {
     div.style.transform='rotate(0deg)';
   }
@@ -58,3 +54,12 @@ function changeRotation(div, i) {
     div.style.transform='rotate(5deg)';
   }
 }
+
+/* AUDIO
+document.addEventListener("DOMContentLoaded", function(event) {
+  var audio = document.getElementsByTagName("audio")[0];
+  console.log(audio);
+  audio.load();
+  audio.play();
+});
+*/
