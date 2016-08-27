@@ -72,6 +72,13 @@ function changeRotation(group, i) {
   }
 }
 
+// Lists
+var lists = document.querySelectorAll('li');
+for (var i = 0; i < lists; i++) {
+    lists[i].style.color="red";
+    console.log(lists[i].style.color);
+}
+
 /* AUDIO
 document.addEventListener("DOMContentLoaded", function(event) {
   var audio = document.getElementsByTagName("audio")[0];
