@@ -30,7 +30,6 @@ for (var i  = 0; i < imgs.length; i++) {
     imgs[i].src = replaceImages(imgs[i], imgURL);
 }
 
-
 // FIX ME (AUDIO)
 var audio = new Audio('duffman.mp3'); 
 audio.play();
