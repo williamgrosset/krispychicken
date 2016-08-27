@@ -35,17 +35,27 @@ for (var i  = 0; i < imgs.length; i++) {
 var audio = new Audio('duffman.mp3'); 
 audio.play();
 
+var counts = []
+
 var divs = document.querySelectorAll('div');
 for (var i = 0; i < divs.length; i++) {
   divs[i].style.transition='all 0.3s';
-  twitchSometimes(divs[i]);
+  counts[i] = 0;
+  twitchSometimes(divs[i], i);
 }
 
-function twitchSometimes(div) {
-  var randomInterval = Math.random() * 10000;
-  setInterval(function() {changeRotation(div);}, randomInterval);
+function twitchSometimes(div, i) {
+  var ran = Math.floor(Math.random() * 10000);
+  setInterval(function() {changeRotation(div, i);}, ran);
 }
 
-function changeRotation(div) {
-  div.style.transform='rotate(0.5deg)';
+function changeRotation(div, i) {
+  counts[i] = counts[i] + 1;
+  console.log(counts[i]);
+  if(counts[i] % 2 === 0) {
+    div.style.transform='rotate(0deg)';
+  }
+  else {
+    div.style.transform='rotate(5deg)';
+  }
 }
