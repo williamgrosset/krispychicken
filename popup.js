@@ -5,7 +5,7 @@
 
 function click(e) {
   chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundImage="url('chicken.png')";"})
+      {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
   window.close();
 }
 
