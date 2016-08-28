@@ -5,6 +5,7 @@
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
+  "background": { "page": "popup.html" },
   "web_accessible_resources": ["chicken.png"],
   "browser_action": {
       "default_title": "Let's get crazy with chickens.",

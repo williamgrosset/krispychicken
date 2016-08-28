@@ -35,14 +35,11 @@ function replaceImages(domImg, srcImage) {
     img.src = srcImage;
 }
 
+// Fried Chicken EVERYWHERE
 var imgs = document.getElementsByTagName('img');
 for (var i  = 0; i < imgs.length; i++) {
     imgs[i].src = replaceImages(imgs[i], imgURL);
 }
-
-// FIX ME (AUDIO)
-var audio = new Audio('duffman.mp3'); 
-audio.play();
 
 // here we make the background cycle through many colours
 document.body.style.transition='all 0.8s';
@@ -65,7 +62,7 @@ for (var i = 0; i < groups.length; i++) {
 
 function twitchSometimes(group, i) {
   // takes an array of elements and gives them all transformations
-  var ran = Math.floor(Math.random() * 6000);
+  var ran = Math.floor(Math.random() * 5000);
   intervals[i] = setInterval(function() {changeRotation(group, i);}, ran);
 }
 
@@ -97,7 +94,6 @@ for (var i = 0; i < links.length; i++) {
   }, 1000)
 }
 
-
 function bgColourCycle() {
   if (bgCount % 10 === 0) { document.body.style.backgroundColor='#F08'; }
   if (bgCount % 10 === 1) { document.body.style.backgroundColor='#8F8'; }
@@ -110,3 +106,12 @@ function bgColourCycle() {
   if (bgCount % 10 === 8) { document.body.style.backgroundColor='#A5F'; } 
   if (bgCount % 10 === 9) { document.body.style.backgroundColor='#50D'; }
 }
+
+/* AUDIO
+document.addEventListener("DOMContentLoaded", function(event) {
+  var audio = document.getElementsByTagName("audio")[0];
+  console.log(audio);
+  audio.load();
+  audio.play();
+});
+*/
