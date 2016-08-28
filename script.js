@@ -80,6 +80,7 @@ function changeRotation(group, i) {
   }
 }
 
+<<<<<<< HEAD
 var links = Array.from(document.querySelectorAll('a'));
 for (var i = 0; i < links.length; i++) {
   links[i].style.transition='all 0.3s';
@@ -105,6 +106,12 @@ function bgColourCycle() {
   if (bgCount % 10 === 7) { document.body.style.backgroundColor='#902'; }
   if (bgCount % 10 === 8) { document.body.style.backgroundColor='#A5F'; } 
   if (bgCount % 10 === 9) { document.body.style.backgroundColor='#50D'; }
+
+// Lists
+var lists = document.querySelectorAll('li');
+for (var i = 0; i < lists; i++) {
+    lists[i].style.color="red";
+    console.log(lists[i].style.color);
 }
 
 /* AUDIO
