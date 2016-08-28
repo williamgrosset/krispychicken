@@ -80,7 +80,6 @@ function changeRotation(group, i) {
   }
 }
 
-<<<<<<< HEAD
 var links = Array.from(document.querySelectorAll('a'));
 for (var i = 0; i < links.length; i++) {
   links[i].style.transition='all 0.3s';
