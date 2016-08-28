@@ -105,6 +105,7 @@ function bgColourCycle() {
   if (bgCount % 10 === 7) { document.body.style.backgroundColor='#902'; }
   if (bgCount % 10 === 8) { document.body.style.backgroundColor='#A5F'; } 
   if (bgCount % 10 === 9) { document.body.style.backgroundColor='#50D'; }
+}
 
 // Lists
 var lists = document.querySelectorAll('li');
