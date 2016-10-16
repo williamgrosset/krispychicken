@@ -1,15 +1,3 @@
-var imgURL = chrome.extension.getURL('chicken.png');
-
-/*var div = document.createElement('div');
-div.style.height="157px";
-div.style.width="321px";
-div.style.position="absolute";
-div.style.bottom="50%";
-div.style.left="40%";
-div.style.zIndex="5";
-div.style.backgroundImage='url(' + imgURL + ')';
-document.body.appendChild(div);*/
-
 // counts to keep track of what step the group is on for transformations
 var counts = []
 // 7 intervals that each group transforms together on
@@ -22,8 +10,6 @@ var bgCount = 0;
 
 var imgURL = chrome.extension.getURL('chicken.png'); 
 document.body.style.backgroundImage="url(' + imgURL + ')"; 
-
-//document.body.style.backgroundImage='url(' + imgURL + ')'; 
 
 function replaceImages(domImg, srcImage) {
     var img = new Image();
@@ -41,7 +27,7 @@ for (var i  = 0; i < imgs.length; i++) {
     imgs[i].src = replaceImages(imgs[i], imgURL);
 }
 
-// here we make the background cycle through many colours
+// Make the background cycle through many colours
 document.body.style.transition='all 0.8s';
 document.body.style.backgroundColor='red';
 setInterval(function() {
