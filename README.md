@@ -1,5 +1,5 @@
 
-# A chrome extension that tears your web page apart. 
+# A chrome extension that dynamically tears your web page apart. 
 
 Do you know when you have a great idea and you want to beat everyone else to it? Well, that is what we used for the motivation of our masterpiece...
 
